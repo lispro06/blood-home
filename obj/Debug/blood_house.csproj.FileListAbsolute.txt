@@ -21,3 +21,18 @@ C:\Users\Owner\Documents\Visual Studio 2010\Projects\blood_house\blood_house\Bin
 C:\Users\Owner\Documents\Visual Studio 2010\Projects\blood_house\blood_house\Bin\Release\blood_house.xap
 C:\Users\Owner\Documents\Visual Studio 2010\Projects\blood_house\blood_house\Bin\Release\Microsoft.Phone.Controls.Maps.dll
 C:\Users\Owner\Documents\Visual Studio 2010\Projects\blood_house\blood_house\Bin\Release\Microsoft.Phone.Controls.Maps.xml
+C:\Users\Owner\blood-home\Bin\Release\ApplicationIcon.png
+C:\Users\Owner\blood-home\Bin\Release\Background.png
+C:\Users\Owner\blood-home\Bin\Release\blood_house.dll
+C:\Users\Owner\blood-home\Bin\Release\blood_house.pdb
+C:\Users\Owner\blood-home\Bin\Release\AppManifest.xaml
+C:\Users\Owner\blood-home\Bin\Release\blood_house.xap
+C:\Users\Owner\blood-home\Bin\Release\Microsoft.Phone.Controls.Maps.dll
+C:\Users\Owner\blood-home\Bin\Release\Microsoft.Phone.Controls.Maps.xml
+C:\Users\Owner\blood-home\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Owner\blood-home\obj\Debug\App.g.i.cs
+C:\Users\Owner\blood-home\obj\Debug\MainPage.g.i.cs
+C:\Users\Owner\blood-home\obj\Debug\blood_house.g.resources
+C:\Users\Owner\blood-home\obj\Debug\blood_house.dll
+C:\Users\Owner\blood-home\obj\Debug\blood_house.pdb
+C:\Users\Owner\blood-home\obj\Debug\XapCacheFile.xml
