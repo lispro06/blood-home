@@ -39,32 +39,49 @@ namespace blood_house
 	        {"도봉면허시험장", "평일 : 09:00~18:00 \n전화번호 : 02-935-0322\n서울 노원구 동1로 727\n(도봉면허시험장 내)"},
 	        {"의정부", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 031-841-0322\n경기 의정부시 의정부동 195-1 2층\n(1층스무디킹,신한은행건너편)"},
 	        {"구리", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 031-563-5322\n경기 구리시 인창동 280-4 명동빌딩 3층"},
-            {"서울서부", "평일 : 09:00~18:00 \n전화번호 : 02-952-0322\n서울 노원구 상계6동 764\n(중계역6번출구 노원역방향 150m)"},
+            {"서울서부", "평일 : 09:00~18:00 \n전화번호 : 02-952-0322\n서울 강서구 염창동 280-17 (강서보건소와 서울도시가스 중간에 위치)"},
             {"일산", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 031-901-5492\n경기 고양시 일산동구 장항동효산캐슬 2층\n(정발산역1번출구 벧엘교회 방향 카페베네 2층)"},
             {"연신내", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-353-7750\n서울 은평구 갈현동 396-12 와이타운4층\n(연신내역 6번출구)"},
-	        {"우장산역", "평일 : 09:00-18:00 \n전화번호 : 02-2603-5817"},
-	        {"홍대", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-323-5420"},
-	        {"이대", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-715-3105"},
-	        {"신촌", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-392-6460"},
-	        {"신촌연대", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-312-1247"},
-	        {"서울역", "평일 : 09:00-18:00 \n전화번호 : 02-752-9020"},
-	        {"대방역", "평일 : 09:00-18:00 \n전화번호 : 02-825-6560"},
-	        {"구로디지털단지역", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-869-9415"},
-	        {"신도림테크노마트", "평일 : 09:00-18:00 \n전화번호 : 02-861-0801"},
-	        {"서울대역", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-873-4364"},
+	        {"우장산역", "평일 : 09:00-18:00 \n전화번호 : 02-2603-5817\n서울 강서구 화곡동 1006-9 (지하철5호선 우장산역 3번 출구 150m)"},
+	        {"홍대", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-323-5420\n서울 마포구 동교동 162-1 대화빌딩 6층 (홍대입구역 9번출구)"},
+	        {"이대", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-715-3105\n서울 서대문구 대현동 40-4 (이대입구역 2번출구)"},
+	        {"신촌", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-392-6460\n서울 서대문구 창천동 18-5번지 8층 (2호선 신촌역 3번 출구 신촌빌딩 8층)"},
+	        {"신촌연대", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-312-1247\n서울 서대문구 창천동 18-5번지 8층 (2호선 신촌역 3번 출구 신촌빌딩 8층)"},
+	        {"서울역", "평일 : 09:00-18:00 \n전화번호 : 02-752-9020\n서울 중구 봉래동2가 122 (1호선 서울역 2번 출구)"},
+	        {"대방역", "평일 : 09:00-18:00 \n전화번호 : 02-825-6560\n서울 영등포구 신길7동 1372(대방역 5번 출구)"},
+	        {"구로디지털단지역", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-869-9415\n서울 구로구 구로3동 1120 (지하철 2호선 구로디지털단지역 1번 출구 오른쪽 방향)"},
+	        {"신도림테크노마트", "평일 : 09:00-18:00 \n전화번호 : 02-861-0801\n서울 구로구 구로동 3-33 지하광장(테크노마트)"},
+	        {"서울대역", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-873-4364\n서울 관악구 봉천7동 1598-18(지하철2호선 서울대입구역 2번출구 관악구청 맞은편 2층)"},
 	        {"서울대학교", "평일 : 09:00-18:00 \n전화번호 : 02-886-2479\n서울 관악구 대학동\n서울대학교 두레문예관 내"},
-	        {"서울남부", "평일 : 09:00-18:00 \n전화번호 : 02-570-0662"},
-	        {"잠실역", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-2202-7479"},
-	        {"이수", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-578-9811"},
-	        {"강남", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-533-0770"},
-	        {"강남2", "평일 : 09:00-18:00 \n전화번호 : 02-564-1525"},
-	        {"강남면허", "평일 : 09:00-18:00 \n전화번호 : 02-565-8332"},
-	        {"코엑스", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-551-0600"},
-	        {"천호", "평,토(일) : 09:00(10:00)~18:00 \n전화번호 : 02-485-3515"},
-	        {"동서울", "평일 : 09:00-18:00 \n전화번호 : 02-2201-8481"},
-	        {"동서울2", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-446-3526"},
+	        {"서울남부", "평일 : 09:00-18:00 \n전화번호 : 02-570-0662\n서울 강남구 개포동 1267 (매봉역 4번출구 양재천쪽 10분 도보)"},
+	        {"잠실역", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-2202-7479\n서울 송파구 잠실동 40-1 (잠실역3번출구 롯데백화점앞 지하광장 롯데리아 옆)"},
+	        {"이수", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-578-9811\n서울 동작구 동작대로 109 경문빌딩 3층"},
+	        {"강남", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-533-0770\n서울 서초구 서초4동 1301∼1306 1305-3 대원빌딩7층(2호선 강남역 10번출구 CGV극장건너편)"},
+	        {"강남2", "평일 : 09:00-18:00 \n전화번호 : 02-564-1525\n서울 강남구 역삼동825-9 준빌딩9층 (2호선 강남역 2번출구)"},
+	        {"강남면허", "평일 : 09:00-18:00 \n전화번호 : 02-565-8332\n서울 강남구 대치동 999-5 강남면허시험장앞 두원빌딩 1층 (2호선 삼성역 1번출구)"},
+	        {"코엑스", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-551-0600\n서울 강남구 삼성동159번지 코엑스몰(R7) 강변길 토다이 옆, 2호선 삼성역 5번출구"},
+	        {"천호", "평,토(일) : 09:00(10:00)~18:00 \n전화번호 : 02-485-3515\n서울 강동구 천호동 453-15호 강동빌딩 6층 (천호역 5번출구)"},
+	        {"동서울", "평일 : 09:00-18:00 \n전화번호 : 02-2201-8481\n서울 광진구 구의동 546-1번지 동서울터미널앞 컨테이너건물"},
+	        {"동서울2", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-446-3526\n서울 광진구 구의동 546-1 동서울터미널내 1층 114호 (2호선 강변역 4번출구)"},
 	        {"건대역", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-498-4185\n서울 광진구 화양동 5-91 하마빌딩 4층\n(건대역 2번출구 건대맛거리입구 50m이내)"},
-            {"노량진역", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-825-2916\n서울 동작구 노량진동 73-17 동작경찰서 옆\n(1호선9호선 노량진역 3번출구)"}
+            {"노량진역", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 02-825-2916\n서울 동작구 노량진동 73-17 동작경찰서 옆\n(1호선9호선 노량진역 3번출구)"},
+            {"야탑", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 031-707-3791\n경기 성남시 분당구 야탑동 353-5\n(분당종합상가 3층, 분당선 야탑역 4번출구)"},
+            {"서현", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 031-707-3795\n경기 성남시 분당구 서현동 269-5번지 서원플라자 4층\n(분당선 서현역 AK플라자 6번출구)"},
+            {"아주대", "평일 : 09:00~18:00 \n전화번호 :031-214-8550\n경기 수원시 팔달구 우만2동 578-1호 용성빌딩 2층\n(아주대삼거리에서 아주대방향 좌측)"},
+            {"경기", "평일 : 09:00~18:00 \n전화번호 : 031-220-8518\n경기도 수원시 권선구 권선동 1015-6\n(농협사거리에서 이비스앰버서더호텔 맞은편)"},
+            {"수원역", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 031-245-6518\n경기 수원시 팔달구 매산로1가 57-104호 새수원빌딩 4층\n(애경백화점 육교건너편 로타리 택시승차장앞 건물)"},
+            {"한대앞역", "평일 : 10:00~19:00 \n전화번호 : 031-406-5031\n경기 안산시 상록구 이동 19번지\n(한대앞역 2번 출구, 공영주차장 내)"},
+            {"산본", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 031-397-7600\n경기 군포시 산본동 1134번지 센타빌딩 3층"},
+            {"평촌", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 031-387-8842\n경기 안양시 동안구 호계동 1039-2\n(롯데백화점 옆건물, 범계역 4-1번출구)"},
+            {"안양", "평일 : 09:00~18:00 \n전화번호 : 031-707-3795\n경기 안양시 만안구 안양1동 674-19번지 3층\n(안양역사 맞은편 지하상가 5번 출구)"},
+            {"평택역", "평일 : 10:00~19:00 \n전화번호 : 031-656-8844\n경기 평택시 평택동 55-7 아케이트상가 가동 1층 9-2호\n(평택역 우측 맞은편)"},
+	        {"인천", "평일 : 09:00~18:00 \n전화번호 : 032-815-0631\n인천 연수구 연수3동 581(신연수역 3번출구 도보5분)"},
+	        {"주안", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 032-428-5195\n인천 남구 주안동 173-1 필프라자 201(주안역 시민회관방향 작은사거리 건너 2층)"},
+	        {"구월", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 032-421-9013\n인천 남동구 구월동 1468-1 신현프라자 201호(인천터미널역 2번출구)"},
+	        {"부평", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 032-504-0975\n인천 부평구 부평1동 738-21 부평역사1층 이벤트광장 옆"},
+	        {"상동", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 032-328-3052\n경기 부천시 원미구 상동544-4 가나베스트타운 205호(세이브존 건너편 롯데리아 2층)"},
+	        {"부천", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 032-651-1618\n경기 부천시 원미구 심곡동 172-15 경동빌딩 3층(부천역 5번 출구)"},
+	        {"광명", "평일 : 10:00~19:00 \n전화번호 : 02-2060-5473\n경기 광명시 광명3동 158-81 현대아이타워 5층 502호(7호선 광명사거리역 8번출구)"}
             };
         // Constructor       
         public MainPage()
@@ -95,6 +112,17 @@ namespace blood_house
 
                  southBt.Click += new EventHandler(southBt_Click);
 
+                 ApplicationBarMenuItem ichBt = new ApplicationBarMenuItem("인천지역");
+                 ApplicationBar.MenuItems.Add(ichBt);
+
+                 ichBt.Click += new EventHandler(ichBt_Click);
+
+
+                 ApplicationBarMenuItem gghBt = new ApplicationBarMenuItem("경기지역");
+                 ApplicationBar.MenuItems.Add(gghBt);
+
+                 gghBt.Click += new EventHandler(gghBt_Click);
+
 
                  ApplicationBarMenuItem infoBt = new ApplicationBarMenuItem("앱 정보");
                  ApplicationBar.MenuItems.Add(infoBt);
@@ -105,7 +133,31 @@ namespace blood_house
                 watcher = new GeoCoordinateWatcher();
                 watcher.MovementThreshold = 20;
                 watcher.PositionChanged += new EventHandler<GeoPositionChangedEventArgs<GeoCoordinate>>(watcher_PositionChanged);
-            // Set the center coordinate and zoom level
+                // Set the center coordinate and zoom level
+
+                GeoCoordinate seoul = new GeoCoordinate(37.5502029, 126.9903724);//남산
+
+                //인천
+                GeoCoordinate ich = new GeoCoordinate(37.4197868, 126.6898464);//인천
+                GeoCoordinate jas = new GeoCoordinate(37.4608639, 126.6807963);//주안
+                GeoCoordinate bsd = new GeoCoordinate(37.50524, 126.7524429);//상동
+                GeoCoordinate bps = new GeoCoordinate(37.489689, 126.7226808);//부평
+                GeoCoordinate gwd = new GeoCoordinate(37.4439905, 126.70159);//구월
+                GeoCoordinate bcs = new GeoCoordinate(37.4844107, 126.7835564);//부천
+                GeoCoordinate gms = new GeoCoordinate(37.4797507, 126.8549005);//광명
+
+                //경기
+                GeoCoordinate yts = new GeoCoordinate(37.4116124, 127.1276236);//야탑
+                GeoCoordinate shs = new GeoCoordinate(37.384074, 127.1215402);//서현
+                GeoCoordinate aju = new GeoCoordinate(37.2757817, 127.0436672);//아주대
+                GeoCoordinate ggh = new GeoCoordinate(37.2596911, 127.03058);//경기
+                GeoCoordinate sws = new GeoCoordinate(37.2661541, 127.001673);//수원역
+                GeoCoordinate hus = new GeoCoordinate(37.3111104, 126.8635734);//한대앞역
+                GeoCoordinate sbs = new GeoCoordinate(37.3596826, 126.9320291);//산본역
+                GeoCoordinate pcs = new GeoCoordinate(37.3897693, 126.9510733);//평촌역
+                GeoCoordinate ays = new GeoCoordinate(37.4006057, 126.9219608);//안양
+                GeoCoordinate pts = new GeoCoordinate(36.9917181, 127.0862661);//평택역
+
                 //서울동부
                 GeoCoordinate dbh = new GeoCoordinate(37.6470773, 127.0621925);//서울동부
                 GeoCoordinate ghm = new GeoCoordinate(37.570471390446, 126.978403329849);//광화문
@@ -164,7 +216,7 @@ namespace blood_house
             GeoCoordinate bjd = new GeoCoordinate(35.15518343040505, 129.06185746192932);
             GeoCoordinate dcs = new GeoCoordinate(35.2095682407033, 129.00581002235413);
             GeoCoordinate hud = new GeoCoordinate(35.16244181115321, 129.16219353675842);
-            int zoom = 15;
+            int zoom = 12;
 
 
             // 아이콘을 rectanglar로 지정
@@ -377,7 +429,7 @@ namespace blood_house
 
             Pushpin pin_grc = new Pushpin();
             pin_grc.Location = grc;
-            pin_grc.Name = "의정부";
+            pin_grc.Name = "구리";
             pin_grc.Tag = pin_grc.Name;
             pin_grc.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
             pin_grc.Background = new SolidColorBrush(Colors.Transparent);
@@ -476,6 +528,7 @@ namespace blood_house
                 Width = 64
             };
             bloodMap.Children.Add(pin_ujs);
+
 
             Pushpin pin_hd = new Pushpin();
             pin_hd.Location = hd;
@@ -759,8 +812,251 @@ namespace blood_house
             bloodMap.Children.Add(pin_nrj);
 
 
+            Pushpin pin_ggh = new Pushpin();
+            pin_ggh.Location = ggh;
+            pin_ggh.Name = "경기";
+            pin_ggh.Tag = pin_ggh.Name;
+            pin_ggh.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_ggh.Background = new SolidColorBrush(Colors.Transparent);
+            pin_ggh.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_ggh);
 
-            bloodMap.SetView(scs, zoom);//지도 보이기
+            Pushpin pin_yts = new Pushpin();
+            pin_yts.Location = yts;
+            pin_yts.Name = "야탑";
+            pin_yts.Tag = pin_yts.Name;
+            pin_yts.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_yts.Background = new SolidColorBrush(Colors.Transparent);
+            pin_yts.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_yts);
+
+            Pushpin pin_shs = new Pushpin();
+            pin_shs.Location = shs;
+            pin_shs.Name = "서현";
+            pin_shs.Tag = pin_shs.Name;
+            pin_shs.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_shs.Background = new SolidColorBrush(Colors.Transparent);
+            pin_shs.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_shs);
+
+            Pushpin pin_aju = new Pushpin();
+            pin_aju.Location = aju;
+            pin_aju.Name = "아주대";
+            pin_aju.Tag = pin_aju.Name;
+            pin_aju.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_aju.Background = new SolidColorBrush(Colors.Transparent);
+            pin_aju.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_aju);
+
+            Pushpin pin_sws = new Pushpin();
+            pin_sws.Location = sws;
+            pin_sws.Name = "수원역";
+            pin_sws.Tag = pin_sws.Name;
+            pin_sws.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_sws.Background = new SolidColorBrush(Colors.Transparent);
+            pin_sws.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_sws);
+
+            Pushpin pin_hus = new Pushpin();
+            pin_hus.Location = hus;
+            pin_hus.Name = "한대앞역";
+            pin_hus.Tag = pin_hus.Name;
+            pin_hus.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_hus.Background = new SolidColorBrush(Colors.Transparent);
+            pin_hus.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_hus);
+
+            Pushpin pin_sbs = new Pushpin();
+            pin_sbs.Location = sbs;
+            pin_sbs.Name = "산본";
+            pin_sbs.Tag = pin_sbs.Name;
+            pin_sbs.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_sbs.Background = new SolidColorBrush(Colors.Transparent);
+            pin_sbs.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_sbs);
+
+            Pushpin pin_pcs = new Pushpin();
+            pin_pcs.Location = pcs;
+            pin_pcs.Name = "평촌";
+            pin_pcs.Tag = pin_pcs.Name;
+            pin_pcs.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_pcs.Background = new SolidColorBrush(Colors.Transparent);
+            pin_pcs.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_pcs);
+
+            Pushpin pin_ays = new Pushpin();
+            pin_ays.Location = ays;
+            pin_ays.Name = "안양";
+            pin_ays.Tag = pin_ays.Name;
+            pin_ays.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_ays.Background = new SolidColorBrush(Colors.Transparent);
+            pin_ays.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_ays);
+
+            Pushpin pin_pts = new Pushpin();
+            pin_pts.Location = pts;
+            pin_pts.Name = "평택역";
+            pin_pts.Tag = pin_pts.Name;
+            pin_pts.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_pts.Background = new SolidColorBrush(Colors.Transparent);
+            pin_pts.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_pts);
+
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_ich = new Pushpin();
+            pin_ich.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_ich.Background = new SolidColorBrush(Colors.Transparent);
+            pin_ich.Location = ich;
+            pin_ich.Name = "인천";
+            pin_ich.Tag = pin_ich.Name;
+            pin_ich.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_ich);
+
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_jas = new Pushpin();
+            pin_jas.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_jas.Background = new SolidColorBrush(Colors.Transparent);
+            pin_jas.Location = jas;
+            pin_jas.Name = "주안";
+            pin_jas.Tag = pin_jas.Name;
+            pin_jas.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_jas);
+
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_bsd = new Pushpin();
+            pin_bsd.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_bsd.Background = new SolidColorBrush(Colors.Transparent);
+            pin_bsd.Location = bsd;
+            pin_bsd.Name = "상동";
+            pin_bsd.Tag = pin_bsd.Name;
+            pin_bsd.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_bsd);
+            // Create a pushpin to put at the center of the view
+
+            Pushpin pin_gwd = new Pushpin();
+            pin_gwd.Location = gwd;
+            pin_gwd.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_gwd.Name = "구월";
+            pin_gwd.Tag = pin_gwd.Name;
+            pin_gwd.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_gwd.Background = new SolidColorBrush(Colors.Transparent);
+            bloodMap.Children.Add(pin_gwd);
+
+            Pushpin pin_bps = new Pushpin();
+            pin_bps.Location = bps;
+            pin_bps.Name = "부평";
+            pin_bps.Tag = pin_bps.Name;
+            pin_bps.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_bps.Background = new SolidColorBrush(Colors.Transparent);
+            pin_bps.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_bps);
+
+            Pushpin pin_bcs = new Pushpin();
+            pin_bcs.Location = bcs;
+            pin_bcs.Name = "부천";
+            pin_bcs.Tag = pin_bcs.Name;
+            pin_bcs.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_bcs.Background = new SolidColorBrush(Colors.Transparent);
+            pin_bcs.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_bcs); 
+
+            Pushpin pin_gms = new Pushpin();
+            pin_gms.Location = gms;
+            pin_gms.Name = "광명";
+            pin_gms.Tag = pin_gms.Name;
+            pin_gms.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_gms.Background = new SolidColorBrush(Colors.Transparent);
+            pin_gms.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_gms);
+
+
+
+            bloodMap.SetView(seoul, zoom);//지도 보이기
 
         }
         void pin1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -803,7 +1099,7 @@ namespace blood_house
 
             private void eastBt_Click(object sender, EventArgs e)
             {
-                GeoCoordinate dbh = new GeoCoordinate(37.6470773, 127.0621925);//서울동부
+                GeoCoordinate dbh = new GeoCoordinate(37.6359564, 127.068234);//서울동부 하계역
                 bloodMap.SetView(dbh, 12);
                 //Do work for your application here.
             }
@@ -817,6 +1113,18 @@ namespace blood_house
             {
                 GeoCoordinate jsy = new GeoCoordinate(37.514066147794594, 127.10201025009155);//잠실역
                 bloodMap.SetView(jsy, 12);
+                //Do work for your application here.
+            }
+            private void gghBt_Click(object sender, EventArgs e)
+            {
+                GeoCoordinate gcenter = new GeoCoordinate(37.3449811, 127.0343714);//광교산
+                bloodMap.SetView(gcenter, 11);
+                //Do work for your application here.
+            }
+            private void ichBt_Click(object sender, EventArgs e)
+            {
+                GeoCoordinate bcs = new GeoCoordinate(37.4844107, 126.7835564);//부천
+                bloodMap.SetView(bcs, 12);
                 //Do work for your application here.
             }
             private void infoBt_Click(object sender, EventArgs e)
