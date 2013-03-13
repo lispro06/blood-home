@@ -18,8 +18,9 @@ using System.Windows.Media.Imaging;
 namespace blood_house
 {
     public partial class MainPage : PhoneApplicationPage
-    { 
+    {
         GeoCoordinateWatcher watcher;
+        bool loc_use = true;//위치 정보 사용 플래그
 
         //헌혈의 집 운영정보 dictionary
         public static Dictionary<string, string> bh = new Dictionary<string, string>
@@ -94,18 +95,42 @@ namespace blood_house
 		    {"해운대", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 051-746-9505\n부산 해운대구 중동 1394-385 혜천빌딩 2층(세이븐존 정문 앞)"},
 	        {"부산대학로", "평,토 : 10:00~19:00 \n전화번호 : 051-313-7505\n부산 금정구 장전동 400-61번지(부산대학교 정문 앞 건물 3~4층)"},
 	        {"장전동", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 051-892-2505\n부산 금정구 장전3동 30-17 (지하철 부산대학역 앞 스타벅스 건물 옆 2층)"},
-	        {"동의과학대학", "평일 : 10:00~19:00 \n전화번호 : 051-861-5505\n부산 부산진구 가야3동 산 72번지 동의과학대학 진리관"}
+	        {"동의과학대학", "평일 : 10:00~19:00 \n전화번호 : 051-861-5505\n부산 부산진구 가야3동 산 72번지 동의과학대학 진리관"},
+            {"강릉", "평,(토) : 09:00(10:00)~20:00 \n전화번호 : 033-647-3460\n강원 강릉시 교1동 1884-1 (교동 택지내 분수공원 앞 롯데리아 옆 위치)"},
+	        {"중앙로", "평일 : 09:00~18:00 \n전화번호 : 033-252-3085\n강원 춘천시 중앙로1가 45 대한적십자사 강원도지사 1층"},
+	        {"강원대", "평,(토) : 09:00(10:00)~20:00 \n전화번호 : 033-253-5551\n강원 춘천시 효자2동 강원대학교내(천지관건물1층)"},
+	        {"강원", "평일 : 09:00~18:00 \n전화번호 : 033-269-1043\n강원 춘천시 퇴계동 862-3"},
+	        {"상지대센터", "평일 : 09:00~18:00 \n전화번호 : 033-748-4012\n강원 원주시 우산동 상지대학교 창조관 3층"},
+	        {"원주", "평,(토) : 09:00(10:00)~18:00 \n전화번호 : 033-745-6551\n강원 원주시 일산동 211번지 원주보건소내"},
+	        {"충주", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 043-842-6262\n충북 충주시 성서동 183 (현대타운 앞 라코스테 2층)"},
+	        {"천안", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 041-561-2166\n충남 천안시 동남구 신부동 462-7 문타워(문치과) 6층(터미널사거리 신세계백화점 맞은편)"},
+	        {"청대앞", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 043-268-2656\n충북 청주시 상당구 우암동 237-13(청주대 앞 롯데리아 옆 버스정류장)"},
+		    {"성안길", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 043-258-1649\n충북 청주시 상당구 북문로1가 175-5 청주빌딩3층(성안길 northface매장 3층)"},
+	        {"충북대", "평일 : 09:30~18:30 \n전화번호 : 043-265-2655\n충북 청주시 흥덕구 개신동 (충북대학교 학생회관 2층 보건소 옆)"},
+	        {"충북", "평일 : 09:30~17:30 \n전화번호 : 043-253-2654\n충북 청주시 흥덕구 휴암동318-14 (청주IC 방향 가로수길 예비군 훈련장 옆)"},
             };
         // Constructor       
         public MainPage()
         {
             InitializeComponent();
+            //위치 정보 사용 여부 질의
+            var result = MessageBox.Show(
+             "이 앱은 현재 위치 정보를 사용합니다. " +
+             "사용자 위치 정보 사용에 동의 하십니까?",
+             "사용자 위치 정보",
+             MessageBoxButton.OKCancel);
+            if (result == MessageBoxResult.Cancel)
+            {
+                //Enter code here
+                loc_use = false;
+            }
+
             // 메뉴바
 
                  ApplicationBar = new ApplicationBar();
                  ApplicationBarIconButton hereBt = new ApplicationBarIconButton();
                  hereBt.IconUri = new Uri("/icons/appbar.check.rest.png", UriKind.Relative);
-                 hereBt.Text = "Here";
+                 hereBt.Text = "현재 위치로";
                  ApplicationBar.Buttons.Add(hereBt);
 
                  hereBt.Click += new EventHandler(hereBt_Click);
@@ -141,6 +166,18 @@ namespace blood_house
                  ApplicationBar.MenuItems.Add(bshBt);
 
                  bshBt.Click += new EventHandler(bshBt_Click);
+
+
+                 ApplicationBarMenuItem kwdBt = new ApplicationBarMenuItem("강원지역");
+                 ApplicationBar.MenuItems.Add(kwdBt);
+
+                 kwdBt.Click += new EventHandler(kwdBt_Click);
+
+
+                 ApplicationBarMenuItem ccdBt = new ApplicationBarMenuItem("충청지역");
+                 ApplicationBar.MenuItems.Add(ccdBt);
+
+                 ccdBt.Click += new EventHandler(ccdBt_Click);
 
 
                  ApplicationBarMenuItem infoBt = new ApplicationBarMenuItem("앱 정보");
@@ -239,6 +276,23 @@ namespace blood_house
                 GeoCoordinate bsu = new GeoCoordinate(35.231358, 129.0842462);//부산대학로
                 GeoCoordinate jjd = new GeoCoordinate(35.23069588746653, 129.08681273460388);//장전동
                 GeoCoordinate dgu = new GeoCoordinate(35.1658384, 129.0722408);//동의과학대학
+
+            // 강원도
+                GeoCoordinate gyo = new GeoCoordinate(37.7641382, 128.8760538);//강릉
+                GeoCoordinate jar = new GeoCoordinate(37.8831955, 127.7292735);//중앙로
+                GeoCoordinate kwu = new GeoCoordinate(37.8706622, 127.7443964);//강원대
+                GeoCoordinate kwd = new GeoCoordinate(37.8461548, 127.7386211);//강원
+                GeoCoordinate sgu = new GeoCoordinate(37.36894, 127.9308374);//상지대센터
+                GeoCoordinate wjc = new GeoCoordinate(37.3515742, 127.9468211);//원주
+
+            // 충청도
+                GeoCoordinate cjc = new GeoCoordinate(36.9713546, 127.9317317);//충주
+                GeoCoordinate cac = new GeoCoordinate(36.8186642, 127.1578158);//천안
+                GeoCoordinate cju = new GeoCoordinate(36.6508175, 127.4885893);//청대앞
+                GeoCoordinate sag = new GeoCoordinate(36.6345473, 127.4890011);//성안길
+                GeoCoordinate cbu = new GeoCoordinate(36.6276033, 127.4587962);//충북대
+                GeoCoordinate had = new GeoCoordinate(36.6227781, 127.408816);//충북
+
             int zoom = 12;
 
 
@@ -990,7 +1044,6 @@ namespace blood_house
             pin_ich.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
             bloodMap.Children.Add(pin_ich);
 
-            // Create a pushpin to put at the center of the view
             Pushpin pin_jas = new Pushpin();
             pin_jas.Content = new Rectangle()
             {
@@ -1005,7 +1058,7 @@ namespace blood_house
             pin_jas.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
             bloodMap.Children.Add(pin_jas);
 
-            // Create a pushpin to put at the center of the view
+           
             Pushpin pin_bsd = new Pushpin();
             pin_bsd.Content = new Rectangle()
             {
@@ -1019,7 +1072,7 @@ namespace blood_house
             pin_bsd.Tag = pin_bsd.Name;
             pin_bsd.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
             bloodMap.Children.Add(pin_bsd);
-            // Create a pushpin to put at the center of the view
+            
 
             Pushpin pin_gwd = new Pushpin();
             pin_gwd.Location = gwd;
@@ -1076,6 +1129,7 @@ namespace blood_house
                 Width = 64
             };
             bloodMap.Children.Add(pin_gms);
+            // 부산
             // Create a pushpin to put at the center of the view
             Pushpin pin_dcs = new Pushpin();
             pin_dcs.Content = new Rectangle()
@@ -1106,7 +1160,7 @@ namespace blood_house
             pin_sms.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
             bloodMap.Children.Add(pin_sms);
 
-            // Create a pushpin to put at the center of the view
+           
             Pushpin pin_bjd = new Pushpin();
             pin_bjd.Content = new Rectangle()
             {
@@ -1120,7 +1174,7 @@ namespace blood_house
             pin_bjd.Tag = pin_bjd.Name;
             pin_bjd.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
             bloodMap.Children.Add(pin_bjd);
-            // Create a pushpin to put at the center of the view
+            
 
             Pushpin pin_dyd = new Pushpin();
             pin_dyd.Location = dyd;
@@ -1264,9 +1318,175 @@ namespace blood_house
             };
             bloodMap.Children.Add(pin_dgu);
 
+            // 강원도
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_gyo = new Pushpin();
+            pin_gyo.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_gyo.Background = new SolidColorBrush(Colors.Transparent);
+            pin_gyo.Location = gyo;
+            pin_gyo.Name = "강릉";
+            pin_gyo.Tag = pin_gyo.Name;
+            pin_gyo.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_gyo);
+
+            
+            Pushpin pin_jar = new Pushpin();
+            pin_jar.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_jar.Background = new SolidColorBrush(Colors.Transparent);
+            pin_jar.Location = jar;
+            pin_jar.Name = "중앙로";
+            pin_jar.Tag = pin_jar.Name;
+            pin_jar.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_jar);
+
+            
+            Pushpin pin_kwu = new Pushpin();
+            pin_kwu.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_kwu.Background = new SolidColorBrush(Colors.Transparent);
+            pin_kwu.Location = kwu;
+            pin_kwu.Name = "강원대";
+            pin_kwu.Tag = pin_kwu.Name;
+            pin_kwu.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_kwu);
+            
+
+            Pushpin pin_sgu = new Pushpin();
+            pin_sgu.Location = sgu;
+            pin_sgu.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_sgu.Name = "상지대";
+            pin_sgu.Tag = pin_sgu.Name;
+            pin_sgu.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_sgu.Background = new SolidColorBrush(Colors.Transparent);
+            bloodMap.Children.Add(pin_sgu);
+
+            Pushpin pin_wjc = new Pushpin();
+            pin_wjc.Location = wjc;
+            pin_wjc.Name = "원주";
+            pin_wjc.Tag = pin_wjc.Name;
+            pin_wjc.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_wjc.Background = new SolidColorBrush(Colors.Transparent);
+            pin_wjc.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_wjc);
+
+            // 충청도
+            Pushpin pin_cjc = new Pushpin();
+            pin_cjc.Location = cjc;
+            pin_cjc.Name = "충주";
+            pin_cjc.Tag = pin_cjc.Name;
+            pin_cjc.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_cjc.Background = new SolidColorBrush(Colors.Transparent);
+            pin_cjc.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_cjc);
+
+        
+            Pushpin pin_cac = new Pushpin();
+            pin_cac.Location = cac;
+            pin_cac.Name = "천안";
+            pin_cac.Tag = pin_cac.Name;
+            pin_cac.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_cac.Background = new SolidColorBrush(Colors.Transparent);
+            pin_cac.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_cac);
+
+
+            Pushpin pin_cju = new Pushpin();
+            pin_cju.Location = cju;
+            pin_cju.Name = "청대앞";
+            pin_cju.Tag = pin_cju.Name;
+            pin_cju.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_cju.Background = new SolidColorBrush(Colors.Transparent);
+            pin_cju.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_cju);
+
+            Pushpin pin_sag = new Pushpin();
+            pin_sag.Location = sag;
+            pin_sag.Name = "성안길";
+            pin_sag.Tag = pin_sag.Name;
+            pin_sag.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_sag.Background = new SolidColorBrush(Colors.Transparent);
+            pin_sag.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_sag);
+
+            Pushpin pin_cbu = new Pushpin();
+            pin_cbu.Location = cbu;
+            pin_cbu.Name = "충북대";
+            pin_cbu.Tag = pin_cbu.Name;
+            pin_cbu.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_cbu.Background = new SolidColorBrush(Colors.Transparent);
+            pin_cbu.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_cbu);
+
+            Pushpin pin_had = new Pushpin();
+            pin_had.Location = had;
+            pin_had.Name = "충북";
+            pin_had.Tag = pin_had.Name;
+            pin_had.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_had.Background = new SolidColorBrush(Colors.Transparent);
+            pin_had.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_had);
+
 
             bloodMap.SetView(seoul, zoom);//지도 보이기
 
+            if (loc_use)
+            {
+                watcher.Start();
+            }
         }
         void pin1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -1302,7 +1522,14 @@ namespace blood_house
             }
             private void hereBt_Click(object sender, EventArgs e)
             {
-                watcher.Start();
+                if (loc_use)
+                {
+                    watcher.Start();
+                }
+                else
+                {
+                    MessageBox.Show("위치 정보 사용 안함 선택");
+                }
                 //Do work for your application here.
             }
 
@@ -1340,6 +1567,18 @@ namespace blood_house
             {
                 GeoCoordinate dgu = new GeoCoordinate(35.1658384, 129.0722408);//동의과학대학
                 bloodMap.SetView(dgu, 12);
+                //Do work for your application here.
+            }
+            private void kwdBt_Click(object sender, EventArgs e)
+            {
+                GeoCoordinate kwd = new GeoCoordinate(37.728343, 128.465487);//계방산
+                bloodMap.SetView(kwd, 9);
+                //Do work for your application here.
+            }
+            private void ccdBt_Click(object sender, EventArgs e)
+            {
+                GeoCoordinate had = new GeoCoordinate(36.6227781, 127.408816);//충북
+                bloodMap.SetView(had, 9);
                 //Do work for your application here.
             }
             private void infoBt_Click(object sender, EventArgs e)
