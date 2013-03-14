@@ -108,6 +108,12 @@ namespace blood_house
 		    {"성안길", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 043-258-1649\n충북 청주시 상당구 북문로1가 175-5 청주빌딩3층(성안길 northface매장 3층)"},
 	        {"충북대", "평일 : 09:30~18:30 \n전화번호 : 043-265-2655\n충북 청주시 흥덕구 개신동 (충북대학교 학생회관 2층 보건소 옆)"},
 	        {"충북", "평일 : 09:30~17:30 \n전화번호 : 043-253-2654\n충북 청주시 흥덕구 휴암동318-14 (청주IC 방향 가로수길 예비군 훈련장 옆)"},
+	        {"공주대학교", "평,공 : 09:00~18:00 \n전화번호 : 041-858-2166\n충남 공주시 신관동 182 공주대학교 (중앙도서관 앞)"},
+	        {"충남대학교", "평일 : 09:00~18:00 \n전화번호 : 042-823-7166\n대전 유성구 궁동 220 충남대학교 (제2학생회관 3층)"},
+	        {"둔산", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 042-486-2166\n대전 서구 둔산동 1039 (402호)"},
+	        {"으능정이", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 042-252-2166\n대전 중구 은행동 48-2번지 2층 (은행동 이안경원 옆 건물임)"},
+	        {"대전복합터미널", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 041-858-2166\n대전 동구 성남동 494-8"},
+	        {"대전세종충남", "일시운영중단 \n전화번호 : 042-623-2166\n대전 대덕구 송촌동 294-6 (스파플러스 찜질방 후문 옆)"},
             };
         // Constructor       
         public MainPage()
@@ -292,6 +298,12 @@ namespace blood_house
                 GeoCoordinate sag = new GeoCoordinate(36.6345473, 127.4890011);//성안길
                 GeoCoordinate cbu = new GeoCoordinate(36.6276033, 127.4587962);//충북대
                 GeoCoordinate had = new GeoCoordinate(36.6227781, 127.408816);//충북
+                GeoCoordinate kju = new GeoCoordinate(36.469352, 127.1398843);//공주대학교
+                GeoCoordinate cnu = new GeoCoordinate(36.3659634, 127.3458188);//충남대학교
+                GeoCoordinate dsd = new GeoCoordinate(36.3513717, 127.3775162);//둔산
+                GeoCoordinate unj = new GeoCoordinate(36.3288993, 127.427665);//으느정이
+                GeoCoordinate dbt = new GeoCoordinate(36.3490706, 127.4375941);//대전복합터미널
+                GeoCoordinate dsc = new GeoCoordinate(36.3539339, 127.4420451);//대전.세종.충남
 
             int zoom = 12;
 
@@ -300,6 +312,10 @@ namespace blood_house
             Uri imgUri = new Uri("icons/blood-donate-icon.png", UriKind.RelativeOrAbsolute);
             BitmapImage imgSourceR = new BitmapImage(imgUri);
             ImageBrush imgBrush = new ImageBrush() { ImageSource = imgSourceR };
+            // 아이콘을 rectanglar로 지정
+            Uri imgUri2 = new Uri("icons/getImage.png", UriKind.RelativeOrAbsolute);
+            BitmapImage imgSourceR2 = new BitmapImage(imgUri2);
+            ImageBrush imgBrush2 = new ImageBrush() { ImageSource = imgSourceR2 };
 
 
             // Create a pushpin to put at the center of the view
@@ -1479,6 +1495,94 @@ namespace blood_house
                 Width = 64
             };
             bloodMap.Children.Add(pin_had);
+
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_kju = new Pushpin();
+            pin_kju.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_kju.Background = new SolidColorBrush(Colors.Transparent);
+            pin_kju.Location = kju;
+            pin_kju.Name = "공주대학교";
+            pin_kju.Tag = pin_kju.Name;
+            pin_kju.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_kju);
+
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_cnu = new Pushpin();
+            pin_cnu.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_cnu.Background = new SolidColorBrush(Colors.Transparent);
+            pin_cnu.Location = cnu;
+            pin_cnu.Name = "충남대학교";
+            pin_cnu.Tag = pin_cnu.Name;
+            pin_cnu.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_cnu);
+
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_dsd = new Pushpin();
+            pin_dsd.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_dsd.Background = new SolidColorBrush(Colors.Transparent);
+            pin_dsd.Location = dsd;
+            pin_dsd.Name = "둔산";
+            pin_dsd.Tag = pin_dsd.Name;
+            pin_dsd.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_dsd);
+            // Create a pushpin to put at the center of the view
+
+            Pushpin pin_unj = new Pushpin();
+            pin_unj.Location = unj;
+            pin_unj.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_unj.Name = "으능정이";
+            pin_unj.Tag = pin_unj.Name;
+            pin_unj.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_unj.Background = new SolidColorBrush(Colors.Transparent);
+            bloodMap.Children.Add(pin_unj);
+
+            Pushpin pin_dbt = new Pushpin();
+            pin_dbt.Location = dbt;
+            pin_dbt.Name = "대전복합터미널";
+            pin_dbt.Tag = pin_dbt.Name;
+            pin_dbt.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_dbt.Background = new SolidColorBrush(Colors.Transparent);
+            pin_dbt.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_dbt);
+
+            Pushpin pin_dsc = new Pushpin();
+            pin_dsc.Location = dsc;
+            pin_dsc.Name = "대전세종충남";
+            pin_dsc.Tag = pin_dsc.Name;
+            pin_dsc.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_dsc.Background = new SolidColorBrush(Colors.Transparent);
+            pin_dsc.Content = new Rectangle()
+            {
+                Fill = imgBrush2,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_dsc);
 
 
             bloodMap.SetView(seoul, zoom);//지도 보이기

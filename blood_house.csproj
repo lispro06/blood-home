@@ -98,6 +98,7 @@
     <Content Include="icons\appbar.cancel.rest.png" />
     <Content Include="icons\appbar.check.rest.png" />
     <Content Include="icons\blood-donate-icon.png" />
+    <Resource Include="icons\getImage.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
