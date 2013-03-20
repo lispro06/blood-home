@@ -100,7 +100,7 @@ namespace blood_house
 	        {"중앙로", "평일 : 09:00~18:00 \n전화번호 : 033-252-3085\n강원 춘천시 중앙로1가 45 대한적십자사 강원도지사 1층"},
 	        {"강원대", "평,(토) : 09:00(10:00)~20:00 \n전화번호 : 033-253-5551\n강원 춘천시 효자2동 강원대학교내(천지관건물1층)"},
 	        {"강원", "평일 : 09:00~18:00 \n전화번호 : 033-269-1043\n강원 춘천시 퇴계동 862-3"},
-	        {"상지대센터", "평일 : 09:00~18:00 \n전화번호 : 033-748-4012\n강원 원주시 우산동 상지대학교 창조관 3층"},
+	        {"상지대", "평일 : 09:00~18:00 \n전화번호 : 033-748-4012\n강원 원주시 우산동 상지대학교 창조관 3층"},
 	        {"원주", "평,(토) : 09:00(10:00)~18:00 \n전화번호 : 033-745-6551\n강원 원주시 일산동 211번지 원주보건소내"},
 	        {"충주", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 043-842-6262\n충북 충주시 성서동 183 (현대타운 앞 라코스테 2층)"},
 	        {"천안", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 041-561-2166\n충남 천안시 동남구 신부동 462-7 문타워(문치과) 6층(터미널사거리 신세계백화점 맞은편)"},
@@ -114,6 +114,16 @@ namespace blood_house
 	        {"으능정이", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 042-252-2166\n대전 중구 은행동 48-2번지 2층 (은행동 이안경원 옆 건물임)"},
 	        {"대전복합터미널", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 041-858-2166\n대전 동구 성남동 494-8"},
 	        {"대전세종충남", "일시운영중단 \n전화번호 : 042-623-2166\n대전 대덕구 송촌동 294-6 (스파플러스 찜질방 후문 옆)"},
+            {"안동", "평,(동절기) : 10:00(09:00)~19:00(18:00) \n전화번호 : 054-858-3780\n경북 안동시 남부동 242-1번지(시내 농협중구지점 바로 맞은편 건물2층)"},
+	        {"포항", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 054-244-8891\n경북 포항시 북구 대흥동 594-3번지 2층(롯데시네마를 바라보고 우측편)"},
+	        {"대구대", "평일 : 09:00~18:00 \n전화번호 : 053-851-3124\n경북 경산시 진량읍 대구대학교경산캠퍼스 제1 학생회관 옆"},
+	        {"대구보건대학", "공사중 \n전화번호 : 053-326-9064\n대구 북구 태전동 산7번지(대구보건대학 내 문화관1층)"},
+	        {"경북대", "평일 : 10:00~19:00 \n전화번호 : 053-421-6235\n대구 북구 산격동 1341-2번지 4층"},
+	        {"대구경북", "평일 : 09:00~18:00 \n전화번호 : 053-605-5642\n대구 중구 달성동 147-2번지(달성네거리->북비산네거리방향200m도로변)"},
+	        {"동성로", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 053-252-2285\n대구 중구 동성로2가 56-3번지 정호빌딩2층(중앙네거리->2.28공원방향 조금올라오면 도로변 귀금속건물2층)"},
+	        {"228기념중앙공원", "평,토 : 10:00~19:00 \n전화번호 : 053-253-2280\n대구 중구 공평동 15(2.28기념공원 뜨라래레스토랑 맞은편)"},
+	        {"대구중앙로", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 053-252-2315\n대구 중구 동성로3가 111 센트럴엠 201호"},
+		    {"반월당", "평일 : 10:00~19:00 \n전화번호 : 053-254-2901\n대구 중구 남산2동 937번지(반월당네거리 대구적십자병원옆 동아쇼핑건너편)"},
             };
         // Constructor       
         public MainPage()
@@ -184,6 +194,11 @@ namespace blood_house
                  ApplicationBar.MenuItems.Add(ccdBt);
 
                  ccdBt.Click += new EventHandler(ccdBt_Click);
+
+                 ApplicationBarMenuItem tkhBt = new ApplicationBarMenuItem("대구경북");
+                 ApplicationBar.MenuItems.Add(tkhBt);
+
+                 tkhBt.Click += new EventHandler(tkhBt_Click);
 
 
                  ApplicationBarMenuItem infoBt = new ApplicationBarMenuItem("앱 정보");
@@ -304,6 +319,20 @@ namespace blood_house
                 GeoCoordinate unj = new GeoCoordinate(36.3288993, 127.427665);//으느정이
                 GeoCoordinate dbt = new GeoCoordinate(36.3490706, 127.4375941);//대전복합터미널
                 GeoCoordinate dsc = new GeoCoordinate(36.3539339, 127.4420451);//대전.세종.충남
+
+
+
+            //
+                GeoCoordinate adc = new GeoCoordinate(36.5640022, 128.7305919);//안동
+                GeoCoordinate phc = new GeoCoordinate(36.0363686, 129.3624915);//포항
+                GeoCoordinate tgu = new GeoCoordinate(35.901332, 129.3624915);//대구대
+                GeoCoordinate tbu = new GeoCoordinate(35.928578, 128.543535);//대구보건대학
+                GeoCoordinate gbu = new GeoCoordinate(35.8928153, 128.6091775);//경북대
+                GeoCoordinate tkh = new GeoCoordinate(35.8786051, 128.5790704);//대구경북
+                GeoCoordinate dsr = new GeoCoordinate(35.8705104, 128.5960519);//동성로
+                GeoCoordinate fmp = new GeoCoordinate(35.8695897, 128.5982523);//2.28기념중앙공원
+                GeoCoordinate tja = new GeoCoordinate(35.8673488, 128.5950481);//중앙로
+                GeoCoordinate pwd = new GeoCoordinate(35.8654904, 128.5916133);//반월당
 
             int zoom = 12;
 
@@ -1584,6 +1613,153 @@ namespace blood_house
             };
             bloodMap.Children.Add(pin_dsc);
 
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_adc = new Pushpin();
+            pin_adc.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_adc.Background = new SolidColorBrush(Colors.Transparent);
+            pin_adc.Location = adc;
+            pin_adc.Name = "안동";
+            pin_adc.Tag = pin_adc.Name;
+            pin_adc.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_adc);
+
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_phc = new Pushpin();
+            pin_phc.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_phc.Background = new SolidColorBrush(Colors.Transparent);
+            pin_phc.Location = phc;
+            pin_phc.Name = "포항";
+            pin_phc.Tag = pin_phc.Name;
+            pin_phc.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_phc);
+
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_tgu = new Pushpin();
+            pin_tgu.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_tgu.Background = new SolidColorBrush(Colors.Transparent);
+            pin_tgu.Location = tgu;
+            pin_tgu.Name = "대구대";
+            pin_tgu.Tag = pin_tgu.Name;
+            pin_tgu.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_tgu);
+            // Create a pushpin to put at the center of the view
+
+            Pushpin pin_tbu = new Pushpin();
+            pin_tbu.Location = tbu;
+            pin_tbu.Content = new Rectangle()
+            {
+                Fill = imgBrush2,
+                Height = 64,
+                Width = 64
+            };
+            pin_tbu.Name = "대구보건대학";
+            pin_tbu.Tag = pin_tbu.Name;
+            pin_tbu.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_tbu.Background = new SolidColorBrush(Colors.Transparent);
+            bloodMap.Children.Add(pin_tbu);
+
+            Pushpin pin_gbu = new Pushpin();
+            pin_gbu.Location = gbu;
+            pin_gbu.Name = "경북대";
+            pin_gbu.Tag = pin_gbu.Name;
+            pin_gbu.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_gbu.Background = new SolidColorBrush(Colors.Transparent);
+            pin_gbu.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_gbu);
+
+            Pushpin pin_tkh = new Pushpin();
+            pin_tkh.Location = tkh;
+            pin_tkh.Name = "대구경북";
+            pin_tkh.Tag = pin_tkh.Name;
+            pin_tkh.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_tkh.Background = new SolidColorBrush(Colors.Transparent);
+            pin_tkh.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_tkh);
+
+
+
+
+            Pushpin pin_dsr = new Pushpin();
+            pin_dsr.Location = dsr;
+            pin_dsr.Name = "동성로";
+            pin_dsr.Tag = pin_dsr.Name;
+            pin_dsr.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_dsr.Background = new SolidColorBrush(Colors.Transparent);
+            pin_dsr.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_dsr);
+
+
+            Pushpin pin_fmp = new Pushpin();
+            pin_fmp.Location = fmp;
+            pin_fmp.Name = "228기념중앙공원";
+            pin_fmp.Tag = pin_fmp.Name;
+            pin_fmp.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_fmp.Background = new SolidColorBrush(Colors.Transparent);
+            pin_fmp.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_fmp);
+
+            Pushpin pin_tja = new Pushpin();
+            pin_tja.Location = tja;
+            pin_tja.Name = "대구중앙로";
+            pin_tja.Tag = pin_tja.Name;
+            pin_tja.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_tja.Background = new SolidColorBrush(Colors.Transparent);
+            pin_tja.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_tja);
+
+            Pushpin pin_pwd = new Pushpin();
+            pin_pwd.Location = pwd;
+            pin_pwd.Name = "반월당";
+            pin_pwd.Tag = pin_pwd.Name;
+            pin_pwd.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_pwd.Background = new SolidColorBrush(Colors.Transparent);
+            pin_pwd.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_pwd);
 
             bloodMap.SetView(seoul, zoom);//지도 보이기
 
@@ -1683,6 +1859,12 @@ namespace blood_house
             {
                 GeoCoordinate had = new GeoCoordinate(36.6227781, 127.408816);//충북
                 bloodMap.SetView(had, 9);
+                //Do work for your application here.
+            }
+            private void tkhBt_Click(object sender, EventArgs e)
+            {
+                GeoCoordinate mbm = new GeoCoordinate(36.232376, 128.86895);//대구경북
+                bloodMap.SetView(mbm, 9);
                 //Do work for your application here.
             }
             private void infoBt_Click(object sender, EventArgs e)
