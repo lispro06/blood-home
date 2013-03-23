@@ -124,6 +124,11 @@ namespace blood_house
 	        {"228기념중앙공원", "평,토 : 10:00~19:00 \n전화번호 : 053-253-2280\n대구 중구 공평동 15(2.28기념공원 뜨라래레스토랑 맞은편)"},
 	        {"대구중앙로", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 053-252-2315\n대구 중구 동성로3가 111 센트럴엠 201호"},
 		    {"반월당", "평일 : 10:00~19:00 \n전화번호 : 053-254-2901\n대구 중구 남산2동 937번지(반월당네거리 대구적십자병원옆 동아쇼핑건너편)"},
+	        {"울산삼산동", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 052-266-5225\n울산 남구 삼산동킴스빌딩 2층"},
+	        {"성남동", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 052-243-8799\n울산 중구 성남동 219-56(미스터피자옆2층)"},
+	        {"공업탑", "평,토 : 10:00~19:00 \n전화번호 : 052-260-7918\n울산 남구 신정4동 1233-7 (롯데리아 옆 1층)"},
+	        {"울산대", "평일 : 09:00~18:00 \n전화번호 : 052-224-3969\n울산 남구 무거동 산 29번지(울산대학교 내 대학회관 식당 옆)"},
+	        {"울산", "평일 : 09:00~18:00 \n전화번호 : 052-245-2982\n울산 중구 성안동 872-5 (성안동 옥사우나 밑으로 100m)"},
             };
         // Constructor       
         public MainPage()
@@ -199,6 +204,12 @@ namespace blood_house
                  ApplicationBar.MenuItems.Add(tkhBt);
 
                  tkhBt.Click += new EventHandler(tkhBt_Click);
+
+
+                 ApplicationBarMenuItem ushBt = new ApplicationBarMenuItem("울산지역");
+                 ApplicationBar.MenuItems.Add(ushBt);
+
+                 ushBt.Click += new EventHandler(ushBt_Click);
 
 
                  ApplicationBarMenuItem infoBt = new ApplicationBarMenuItem("앱 정보");
@@ -322,7 +333,7 @@ namespace blood_house
 
 
 
-            //
+            //deagu
                 GeoCoordinate adc = new GeoCoordinate(36.5640022, 128.7305919);//안동
                 GeoCoordinate phc = new GeoCoordinate(36.0363686, 129.3624915);//포항
                 GeoCoordinate tgu = new GeoCoordinate(35.901332, 129.3624915);//대구대
@@ -334,6 +345,12 @@ namespace blood_house
                 GeoCoordinate tja = new GeoCoordinate(35.8673488, 128.5950481);//중앙로
                 GeoCoordinate pwd = new GeoCoordinate(35.8654904, 128.5916133);//반월당
 
+            //ulsan
+                GeoCoordinate ssd = new GeoCoordinate(35.5396311, 129.3371712);//삼산동
+                GeoCoordinate snd = new GeoCoordinate(35.5537313, 129.3200672);//성남동
+                GeoCoordinate kut = new GeoCoordinate(35.5323575, 129.3089138);//공업탑
+                GeoCoordinate usu = new GeoCoordinate(35.544583, 129.257225);//울산대
+                GeoCoordinate ush = new GeoCoordinate(35.5731502, 129.3086092);//울산
             int zoom = 12;
 
 
@@ -1760,6 +1777,76 @@ namespace blood_house
                 Width = 64
             };
             bloodMap.Children.Add(pin_pwd);
+            Pushpin pin_ssd = new Pushpin();
+            pin_ssd.Location = ssd;
+            pin_ssd.Name = "울산삼산동";
+            pin_ssd.Tag = pin_ssd.Name;
+            pin_ssd.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_ssd.Background = new SolidColorBrush(Colors.Transparent);
+            pin_ssd.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_ssd);
+
+            Pushpin pin_snd = new Pushpin();
+            pin_snd.Location = snd;
+            pin_snd.Name = "성남동";
+            pin_snd.Tag = pin_snd.Name;
+            pin_snd.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_snd.Background = new SolidColorBrush(Colors.Transparent);
+            pin_snd.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_snd);
+
+            Pushpin pin_kut = new Pushpin();
+            pin_kut.Location = kut;
+            pin_kut.Name = "공업탑";
+            pin_kut.Tag = pin_kut.Name;
+            pin_kut.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_kut.Background = new SolidColorBrush(Colors.Transparent);
+            pin_kut.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_kut);
+
+
+            Pushpin pin_usu = new Pushpin();
+            pin_usu.Location = usu;
+            pin_usu.Name = "울산대";
+            pin_usu.Tag = pin_usu.Name;
+            pin_usu.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_usu.Background = new SolidColorBrush(Colors.Transparent);
+            pin_usu.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_usu);
+
+            Pushpin pin_ush = new Pushpin();
+            pin_ush.Location = ush;
+            pin_ush.Name = "울산";
+            pin_ush.Tag = pin_grc.Name;
+            pin_ush.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_ush.Background = new SolidColorBrush(Colors.Transparent);
+            pin_ush.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_ush);
 
             bloodMap.SetView(seoul, zoom);//지도 보이기
 
@@ -1865,6 +1952,12 @@ namespace blood_house
             {
                 GeoCoordinate mbm = new GeoCoordinate(36.232376, 128.86895);//대구경북
                 bloodMap.SetView(mbm, 9);
+                //Do work for your application here.
+            }
+            private void ushBt_Click(object sender, EventArgs e)
+            {
+                GeoCoordinate ush = new GeoCoordinate(35.5731502, 129.3086092);//울산
+                bloodMap.SetView(ush, 11);
                 //Do work for your application here.
             }
             private void infoBt_Click(object sender, EventArgs e)
