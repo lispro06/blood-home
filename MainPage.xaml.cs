@@ -134,6 +134,14 @@ namespace blood_house
 	        {"창원", "평(토),(일) : 09:00(10:00)~20:00(18:00) \n전화번호 : 053-851-3124\n경남 창원시 용호동 정우상가 2층"},
 	        {"경남대앞", "평(토) : 09:00(10:00)~18:00(17:00) \n전화번호 : 055-245-5161\n경남 창원시 마산합포구 월남동5가 4-69번지 2층(경남대 앞 삼우빌딩 2층)"},
 	        {"진주", "평(토),(일) : 09:00(10:00)~20:00(18:00) \n전화번호 : 055-745-2611\n경남 진주시 대안동 17-5 2층(구 이성수 안과)"},
+	        {"전남대", "평,토(일) : 10:00~19:00(18:00) \n전화번호 : 062-529-9494\n전남 광주 북구 용봉동 300번지 (전남대학교 후문 옆)"},
+	        {"충장로", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 062-232-9494\n광주 동구 충장로3가 32-3 (밀리오레 맞은편)"},
+	        {"금남로", "평일 : 10:00~19:00 \n전화번호 : 053-851-3124\n광주 동구 금남로 금남지하상가 H동 4호 (남도예술회관쪽 입구)"},
+	        {"조선대", "평,공 : 10:00~19:00 \n전화번호 : 062-944-9494\n광주 동구 서석동 351-1번지 (조선대학교 후문 옆, 미술대학 옆)"},
+	        {"광주전남", "평일 : 09:00~18:00 \n전화번호 : 062-600-0600\n광주 남구 서문로 521 (송하동 127-4, 광주인성고등학교 옆, 효천역 맞은편)"},
+	        {"유달", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 061-242-4245\n전남 목포시 상락동 2가 12-4 (코롬반제과점 맞은편, 목포역전 맛의거리 근처)"},
+	        {"순천", "평,(일) : 10:00~20:00(18:00) \n전화번호 : 061-753-2239\n전남 순천시 중앙동 61-23 (지하상가 입구 옆)"},
+	        {"여수", "평,토(일) : 10:00~20:00(18:00) \n전화번호 : 061-663-2413\n전남 여수시 교동 304-3 (롯데리아 건물 2층)"},
             };
         // Constructor       
         public MainPage()
@@ -220,6 +228,12 @@ namespace blood_house
                  ApplicationBar.MenuItems.Add(knuBt);
 
                  knuBt.Click += new EventHandler(knuBt_Click);
+            
+
+                 ApplicationBarMenuItem gjnBt = new ApplicationBarMenuItem("광주전남");
+                 ApplicationBar.MenuItems.Add(gjnBt);
+
+                 gjnBt.Click += new EventHandler(gjnBt_Click);
 
 
                  ApplicationBarMenuItem infoBt = new ApplicationBarMenuItem("앱 정보");
@@ -368,6 +382,16 @@ namespace blood_house
                 GeoCoordinate cwc = new GeoCoordinate(35.228355, 128.6799009);//창원
                 GeoCoordinate knu = new GeoCoordinate(35.1807293, 128.5593173);//경남대앞
                 GeoCoordinate jjc = new GeoCoordinate(35.1950882, 128.0824996);//진주
+
+            //광주전남
+                GeoCoordinate jnu = new GeoCoordinate(35.175168, 126.912025);//전남대
+                GeoCoordinate cjr = new GeoCoordinate(35.1489697, 126.9143073);//충장로
+                GeoCoordinate gnr = new GeoCoordinate(35.1477717, 126.9198781);//금남로
+                GeoCoordinate csu = new GeoCoordinate(35.1440699, 126.9303996);//조선대
+                GeoCoordinate gjh = new GeoCoordinate(35.1040514, 126.8804684);//광주전남
+                GeoCoordinate mpc = new GeoCoordinate(34.7897483, 126.3848954);//유달
+                GeoCoordinate scc = new GeoCoordinate(34.9561493, 127.4844415);//순천
+                GeoCoordinate ysc = new GeoCoordinate(34.7408346, 127.7338797);//여수
 
             int zoom = 12;
 
@@ -1941,6 +1965,125 @@ namespace blood_house
             };
             bloodMap.Children.Add(pin_jjc);
 
+
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_jnu = new Pushpin();
+            pin_jnu.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_jnu.Background = new SolidColorBrush(Colors.Transparent);
+            pin_jnu.Location = jnu;
+            pin_jnu.Name = "전남대";
+            pin_jnu.Tag = pin_jnu.Name;
+            pin_jnu.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_jnu);
+
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_cjr = new Pushpin();
+            pin_cjr.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_cjr.Background = new SolidColorBrush(Colors.Transparent);
+            pin_cjr.Location = cjr;
+            pin_cjr.Name = "충장로";
+            pin_cjr.Tag = pin_cjr.Name;
+            pin_cjr.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_cjr);
+
+            // Create a pushpin to put at the center of the view
+            Pushpin pin_gnr = new Pushpin();
+            pin_gnr.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_gnr.Background = new SolidColorBrush(Colors.Transparent);
+            pin_gnr.Location = gnr;
+            pin_gnr.Name = "금남로";
+            pin_gnr.Tag = pin_gnr.Name;
+            pin_gnr.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            bloodMap.Children.Add(pin_gnr);
+            // Create a pushpin to put at the center of the view
+
+            Pushpin pin_csu = new Pushpin();
+            pin_csu.Location = csu;
+            pin_csu.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            pin_csu.Name = "조선대";
+            pin_csu.Tag = pin_csu.Name;
+            pin_csu.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_csu.Background = new SolidColorBrush(Colors.Transparent);
+            bloodMap.Children.Add(pin_csu);
+
+            Pushpin pin_gjh = new Pushpin();
+            pin_gjh.Location = gjh;
+            pin_gjh.Name = "광주전남";
+            pin_gjh.Tag = pin_gjh.Name;
+            pin_gjh.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_gjh.Background = new SolidColorBrush(Colors.Transparent);
+            pin_gjh.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_gjh);
+
+            Pushpin pin_mpc = new Pushpin();
+            pin_mpc.Location = mpc;
+            pin_mpc.Name = "유달";
+            pin_mpc.Tag = pin_mpc.Name;
+            pin_mpc.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_mpc.Background = new SolidColorBrush(Colors.Transparent);
+            pin_mpc.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_mpc);
+
+
+            Pushpin pin_scc = new Pushpin();
+            pin_scc.Location = scc;
+            pin_scc.Name = "순천";
+            pin_scc.Tag = pin_scc.Name;
+            pin_scc.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_scc.Background = new SolidColorBrush(Colors.Transparent);
+            pin_scc.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_scc);
+
+
+            Pushpin pin_ysc = new Pushpin();
+            pin_ysc.Location = ysc;
+            pin_ysc.Name = "여수";
+            pin_ysc.Tag = pin_ysc.Name;
+            pin_ysc.MouseLeftButtonUp += new MouseButtonEventHandler(pin1_MouseLeftButtonUp);
+            pin_ysc.Background = new SolidColorBrush(Colors.Transparent);
+            pin_ysc.Content = new Rectangle()
+            {
+                Fill = imgBrush,
+                Height = 64,
+                Width = 64
+            };
+            bloodMap.Children.Add(pin_ysc);
+
             bloodMap.SetView(seoul, zoom);//지도 보이기
 
             if (loc_use)
@@ -2058,6 +2201,12 @@ namespace blood_house
             {
                 GeoCoordinate knu = new GeoCoordinate(35.1807293, 128.5593173);//경남대앞
                 bloodMap.SetView(knu, 10);
+                //Do work for your application here.
+            }
+            private void gjnBt_Click(object sender, EventArgs e)
+            {
+                GeoCoordinate gjh = new GeoCoordinate(35.0645238, 126.9864771);//화순군청
+                bloodMap.SetView(gjh, 9);
                 //Do work for your application here.
             }
             private void infoBt_Click(object sender, EventArgs e)
